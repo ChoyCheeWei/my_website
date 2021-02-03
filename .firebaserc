@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "cheeweichoy",
+    "production": "cheeweichoy"
+  }
+}

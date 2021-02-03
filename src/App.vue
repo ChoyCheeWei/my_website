@@ -5,49 +5,33 @@
 </template>
 
 <script>
-import { uiHelper, locale } from '@/util'
-import { SHARED, CACHE_KEY } from '@/constants/constants'
+import { SHARED } from '@/constants/constants'
 export default {
   name: 'App',
   created() {
     //this.browserDetec()
     //this.initilizePageLanguage()
   },
-  methods: {
-    browserDetec() {
-      let browser_detail = navigator.userAgent
-      if (
-        browser_detail.indexOf('Opera') > -1 ||
-        browser_detail.indexOf('OPR') > -1 ||
-        browser_detail.indexOf('MSIE') > -1 ||
-        browser_detail.indexOf('MZBrowser') > -1 ||
-        browser_detail.indexOf('UBrowser') > -1 ||
-        browser_detail.indexOf('.NET') > -1
-      ) {
-        window.location.href = '/static/html/error/browser-not-support.html'
-      }
-    },
-    initilizePageLanguage() {
-      let language = uiHelper.getCookie('language')
-      if (language == null) {
-        language = SHARED.DEFAULT_LANGUAGE
-      }
-      locale.setCurrentLanguage(language)
-      uiHelper.setCookie('language', language)
-    }
-  }
+  methods: {},
 }
 </script>
 
 <style lang="scss">
 html {
   scroll-behavior: smooth;
-  overflow-y: auto !important;
+  overflow-y: scroll !important;
 }
-
 * {
   word-break: normal;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 
 .page {
   background-color: #2e2e2e;
