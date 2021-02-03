@@ -2,7 +2,6 @@
 
 module.exports = {
   transpileDependencies: ['vuetify'],
-  publicPath: process.env.BASE_URL,
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
 
